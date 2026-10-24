@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Ahmed Taia — Market Research & Business Development Specialist. Portfolio featuring competitor analysis, B2B lead generation, business research, and process improvement." />
+<title>Ahmed Taia | Market Research & Business Development</title>
+<style>
+:root{
+  --bg:#090d12;
+  --paper:#111820;
+  --ink:#f3f7f8;
+  --muted:#9ba9b4;
+  --line:#26323d;
+  --accent:#36d1c4;
+  --accent-soft:rgba(54,209,196,.14);
+  --accent-2:#f0a36a;
+  --navy:#b9f4ef;
+  --shadow:0 22px 60px rgba(0,0,0,.35);
+  --radius:20px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;line-height:1.6}
+a{color:inherit}
+button,input{font:inherit}
+::selection{background:var(--accent-soft)}
+.container{width:min(1180px,92%);margin:0 auto}
+.nav{position:sticky;top:0;z-index:30;background:rgba(9,13,18,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(38,50,61,.9)}
+.nav-inner{height:70px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.brand{text-decoration:none;font-weight:850;letter-spacing:-.03em;font-size:18px}
+.brand span{color:var(--accent)}
+.nav-links{display:flex;gap:22px;align-items:center}
+.nav-links a{text-decoration:none;font-size:13px;font-weight:700;color:var(--muted)}
+.nav-links a:hover{color:var(--ink)}
+.nav-actions{display:flex;gap:8px;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--ink);border-radius:999px;padding:10px 15px;text-decoration:none;font-weight:800;font-size:13px;cursor:pointer;background:transparent;color:var(--ink)}
+.btn.primary{background:#0e151d;color:var(--ink)}
+.btn.soft{border-color:var(--line);background:var(--paper)}
+.btn:hover{transform:translateY(-1px)}
+.hero{padding:86px 0 55px}
+.hero-grid{display:grid;grid-template-columns:1.45fr .75fr;gap:56px;align-items:end}
+.kicker{text-transform:uppercase;letter-spacing:.17em;font-size:11px;font-weight:900;color:var(--accent);margin-bottom:19px}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(54px,8vw,104px);line-height:.88;letter-spacing:-.055em;margin:0;max-width:850px;font-weight:500}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.lede{font-size:clamp(18px,2vw,24px);max-width:760px;margin:28px 0 0;color:#b5c1ca}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.hero-side{border-left:1px solid var(--line);padding-left:28px}
+.hero-side p{margin:0 0 18px;color:var(--muted);font-size:14px}
+.hero-side strong{display:block;color:var(--ink);font-size:12px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:5px}
+.status{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:750}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px var(--accent-soft)}
+.metrics{padding:0 0 72px}
+.metric-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.metric{padding:26px 20px 26px 0}
+.metric+.metric{border-left:1px solid var(--line);padding-left:24px}
+.metric .num{font-family:Georgia,serif;font-size:38px;letter-spacing:-.04em;line-height:1;color:var(--navy)}
+.metric .label{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:800;margin-top:8px}
+.section{padding:80px 0}
+.section.alt{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.section-head{display:grid;grid-template-columns:.7fr 1.3fr;gap:50px;margin-bottom:40px}
+.section-label{font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:var(--accent);font-weight:900}
+.section-title{font-family:Georgia,serif;font-weight:500;font-size:clamp(34px,4.2vw,58px);line-height:1.02;letter-spacing:-.04em;margin:0}
+.section-desc{max-width:720px;color:var(--muted);font-size:16px;margin-top:14px}
+.services{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.service{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:26px;position:relative;overflow:hidden}
+.service .rank{position:absolute;right:22px;top:16px;font-family:Georgia,serif;font-size:40px;color:#33414c}
+.service h3{font-size:20px;margin:0 0 9px;letter-spacing:-.02em}
+.service p{color:var(--muted);font-size:14px;margin:0;max-width:560px}
+.service .tags{margin-top:18px}
+.tags{display:flex;flex-wrap:wrap;gap:7px}
+.tag{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:5px 9px;font-size:10px;text-transform:uppercase;letter-spacing:.07em;font-weight:800;color:#b8c3cb;background:#151e27}
+.work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.case{border:1px solid var(--line);background:var(--paper);border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 0 rgba(0,0,0,.02);transition:.2s ease;display:flex;flex-direction:column}
+.case:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.case-visual{min-height:260px;padding:28px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(145deg,#173a4b,#0a6c68);color:white;position:relative;overflow:hidden}
+.case:nth-child(2) .case-visual{background:linear-gradient(145deg,#1f3241,#81573d)}
+.case:nth-child(3) .case-visual{background:linear-gradient(145deg,#173a4b,#475676)}
+.case:nth-child(4) .case-visual{background:linear-gradient(145deg,#24413e,#9a7044)}
+.case-visual:after{content:"";position:absolute;width:220px;height:220px;border:1px solid rgba(255,255,255,.25);border-radius:50%;right:-70px;bottom:-90px;box-shadow:0 0 0 40px rgba(255,255,255,.04),0 0 0 80px rgba(255,255,255,.03)}
+.case-type{font-size:10px;text-transform:uppercase;letter-spacing:.15em;font-weight:900;opacity:.86}
+.case-visual h3{font-family:Georgia,serif;font-size:38px;line-height:1;letter-spacing:-.035em;margin:0;max-width:440px;font-weight:500;position:relative;z-index:1}
+.mini-chart{display:flex;align-items:end;gap:7px;height:70px;position:relative;z-index:1}
+.mini-chart span{width:18px;background:rgba(255,255,255,.78);border-radius:3px 3px 0 0}
+.case-body{padding:24px;display:flex;flex-direction:column;flex:1}
+.case-meta{display:flex;justify-content:space-between;gap:12px;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:800}
+.case-summary{font-size:14px;color:#a9b5be;margin:16px 0 20px;flex:1}
+.case-proof{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:19px}
+.proof{border-top:1px solid var(--line);padding-top:10px}
+.proof strong{font-family:Georgia,serif;font-size:24px;color:var(--navy)}
+.proof span{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:750;margin-top:2px}
+.case button{align-self:flex-start}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+.about-copy p{font-size:19px;color:#b5c1ca;margin:0 0 20px}
+.about-copy strong{color:var(--ink)}
+.timeline{border-left:1px solid var(--line);padding-left:24px}
+.role{padding:0 0 27px;position:relative}
+.role:before{content:"";position:absolute;left:-29px;top:7px;width:9px;height:9px;border-radius:50%;background:var(--paper);border:2px solid var(--accent)}
+.role:last-child{padding-bottom:0}
+.role .date{font-size:10px;text-transform:uppercase;letter-spacing:.11em;color:var(--accent);font-weight:900}
+.role h3{font-size:17px;margin:3px 0 2px}
+.role p{font-size:13px;color:var(--muted);margin:0}
+.tool-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.tool-card{border:1px solid var(--line);border-radius:16px;padding:20px;background:var(--paper)}
+.tool-card h3{font-size:13px;margin:0 0 10px;text-transform:uppercase;letter-spacing:.08em}
+.tool-card p{font-size:13px;color:var(--muted);margin:0}
+.contact{padding:80px 0 95px;scroll-margin-top:70px}
+.contact-box{background:#0e151d;color:var(--ink);border-radius:28px;padding:50px;display:grid;grid-template-columns:1.4fr .6fr;gap:36px;align-items:end}
+.contact-box h2{font-family:Georgia,serif;font-weight:500;font-size:clamp(42px,6vw,78px);letter-spacing:-.05em;line-height:.93;margin:0}
+.contact-box p{color:#aab8c3;font-size:15px;max-width:640px}
+.contact-links{display:flex;flex-direction:column;gap:9px;align-items:stretch}
+.contact-links .btn{border-color:#40505e;color:var(--ink)}
+.contact-links .btn.primary{background:var(--accent);color:#071013;border-color:var(--accent)}
+footer{padding:22px 0 36px;color:var(--muted);font-size:12px}
+.footer-inner{display:flex;justify-content:space-between;gap:15px;border-top:1px solid var(--line);padding-top:22px}
+.modal{position:fixed;inset:0;background:rgba(10,20,28,.66);display:none;align-items:center;justify-content:center;padding:26px;z-index:60}
+.modal.open{display:flex}
+.modal-card{width:min(920px,100%);max-height:88vh;overflow:auto;background:var(--paper);border-radius:24px;box-shadow:0 30px 100px rgba(0,0,0,.3);position:relative}
+.modal-top{position:sticky;top:0;background:rgba(17,24,32,.96);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border-bottom:1px solid var(--line);z-index:2}
+.modal-title{font-weight:850;font-size:14px}
+.close{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:#17212b;color:var(--ink);cursor:pointer;font-size:20px;line-height:1}
+.modal-content{padding:34px}
+.case-study-head{display:grid;grid-template-columns:1fr .85fr;gap:30px;margin-bottom:34px}
+.case-study-head h2{font-family:Georgia,serif;font-size:46px;line-height:1;letter-spacing:-.04em;font-weight:500;margin:0 0 12px}
+.case-study-head p{color:var(--muted);margin:0}
+.fact-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.fact{background:#0e151d;border:1px solid var(--line);border-radius:13px;padding:14px}
+.fact strong{display:block;font-size:17px}
+.fact span{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:800}
+.story-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+.story{border:1px solid var(--line);border-radius:16px;padding:20px}
+.story h3{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin:0 0 8px}
+.story p,.story li{font-size:14px;color:#aab7c0}
+.story ul{margin:0;padding-left:18px}
+.confidential{margin-top:20px;background:#191610;border-left:3px solid var(--accent-2);padding:13px 15px;font-size:12px;color:#d1c1b3}
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:900px){
+  .nav-links{display:none}.hero-grid,.section-head,.about-grid,.contact-box,.case-study-head{grid-template-columns:1fr}.hero-side{border-left:0;border-top:1px solid var(--line);padding:22px 0 0}.metric-grid{grid-template-columns:repeat(2,1fr)}.metric:nth-child(3){border-left:0;border-top:1px solid var(--line)}.metric:nth-child(4){border-top:1px solid var(--line)}.work-grid,.services{grid-template-columns:1fr}.tool-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .nav-actions .soft{display:none}.hero{padding-top:54px}.hero h1{font-size:54px}.metric-grid{grid-template-columns:1fr}.metric+.metric,.metric:nth-child(3){border-left:0;border-top:1px solid var(--line);padding-left:0}.case-proof,.story-grid,.fact-list,.tool-grid{grid-template-columns:1fr}.contact-box{padding:32px}.modal-content{padding:22px}.case-study-head h2{font-size:36px}.footer-inner{flex-direction:column}
+}
+
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#top">Ahmed <span>Taia</span></a>
+    <div class="nav-links">
+      <a href="#services">Services</a><a href="#work">Work</a><a href="#about">About</a><a href="#tools">Tools</a><a href="#contact">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <a class="btn primary" href="#contact">Work with me</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="kicker">Market Research · Business Development · Strategy</div>
+      <h1>I turn <em>market signals</em> into business decisions.</h1>
+      <p class="lede">I’m Ahmed Taia, a Market Research &amp; Business Development Specialist helping businesses understand competitors, find the right prospects, and turn research into clear action.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#work">View selected work</a>
+        <a class="btn" href="https://www.linkedin.com/in/ahmed-tai-818b09329/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BMvBsZRRXS5aRuMz%2F4CbC1g%3D%3D" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <aside class="hero-side">
+      <p><strong>Current focus</strong>Competitor &amp; market research, B2B lead generation, business research, and workflow improvement.</p>
+      <p><strong>Based in</strong>Cairo, Egypt · available for remote freelance projects.</p>
+      <div class="status"><span class="dot"></span>Open to selected freelance projects</div>
+    </aside>
+  </div>
+</section>
+
+<section class="metrics reveal">
+  <div class="container metric-grid">
+    <div class="metric"><div class="num">30+</div><div class="label">B2B clients onboarded</div></div>
+    <div class="metric"><div class="num">40+</div><div class="label">Outbound campaigns managed</div></div>
+    <div class="metric"><div class="num">7 / 18</div><div class="label">Competitor visits personally led / team total</div></div>
+    <div class="metric"><div class="num">4</div><div class="label">Core freelance capabilities</div></div>
+  </div>
+</section>
+
+<section id="services" class="section alt">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-label">01 · Services</div>
+      <div><h2 class="section-title">What I can help you solve.</h2><p class="section-desc">My strongest services sit at the intersection of research, growth, and structured decision-making. I prioritize work where the output can directly support a business decision or sales action.</p></div>
+    </div>
+    <div class="services">
+      <article class="service reveal"><div class="rank">01</div><h3>Competitor &amp; Market Research</h3><p>Structured competitor benchmarking, pricing analysis, positioning, customer experience research, market-gap analysis, and strategic recommendations.</p><div class="tags"><span class="tag">Competitor analysis</span><span class="tag">Market gaps</span><span class="tag">Pricing</span><span class="tag">Strategy</span></div></article>
+      <article class="service reveal"><div class="rank">02</div><h3>B2B Lead Generation &amp; Business Development</h3><p>ICP definition, targeted company research, decision-maker identification, prospect qualification, outreach planning, CRM organization, and follow-up support.</p><div class="tags"><span class="tag">Lead research</span><span class="tag">Apollo</span><span class="tag">SmartLead</span><span class="tag">CRM</span></div></article>
+      <article class="service reveal"><div class="rank">03</div><h3>Business Research &amp; Strategy Reports</h3><p>Research-heavy business problems turned into concise reports, executive summaries, frameworks, KPI structures, and management-ready recommendations.</p><div class="tags"><span class="tag">Business analysis</span><span class="tag">KPIs</span><span class="tag">Recommendations</span><span class="tag">Research</span></div></article>
+      <article class="service reveal"><div class="rank">04</div><h3>Process Improvement &amp; Executive Presentations</h3><p>Workflow diagnostics, lightweight automation concepts, clearer handoffs, and polished presentations that make complex findings easier for teams to act on.</p><div class="tags"><span class="tag">Make</span><span class="tag">Trello</span><span class="tag">Workflow</span><span class="tag">Presentation</span></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="work" class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-label">02 · Selected Work</div>
+      <div><h2 class="section-title">Evidence over claims.</h2><p class="section-desc">These case studies show how I approach ambiguous business questions, structure the research, and translate findings into decisions. Client-sensitive details are intentionally omitted.</p></div>
+    </div>
+    <div class="work-grid">
+      <article class="case reveal">
+        <div class="case-visual"><div class="case-type">Real-world internship · 2026</div><h3>Flexible Workspace Market Intelligence &amp; Expansion Strategy</h3><div class="mini-chart"><span style="height:28%"></span><span style="height:51%"></span><span style="height:68%"></span><span style="height:44%"></span><span style="height:82%"></span><span style="height:64%"></span><span style="height:94%"></span></div></div>
+        <div class="case-body"><div class="case-meta"><span>Raya Smart Buildings / edge</span><span>Cairo</span></div><p class="case-summary">Led market intelligence to help management decide whether to expand immediately or first validate a lighter, more flexible workspace concept.</p><div class="case-proof"><div class="proof"><strong>7</strong><span>Visits personally conducted</span></div><div class="proof"><strong>18</strong><span>Team field visits</span></div><div class="proof"><strong>10+</strong><span>Brands / branches assessed</span></div><div class="proof"><strong>Board</strong><span>Management presentation</span></div></div><button class="btn" data-open-case="edge">View case study</button></div>
+      </article>
+
+      <article class="case reveal">
+        <div class="case-visual"><div class="case-type">B2B growth · 2025–2026</div><h3>Global Client Acquisition &amp; Sales Operations</h3><div class="mini-chart"><span style="height:32%"></span><span style="height:46%"></span><span style="height:57%"></span><span style="height:69%"></span><span style="height:77%"></span><span style="height:90%"></span></div></div>
+        <div class="case-body"><div class="case-meta"><span>Mulingua Language Services</span><span>Global</span></div><p class="case-summary">Built targeted B2B pipelines, ran outbound campaigns, managed CRM activity, and improved internal handoffs between business development and delivery teams.</p><div class="case-proof"><div class="proof"><strong>30+</strong><span>Clients onboarded</span></div><div class="proof"><strong>40+</strong><span>Cold-email campaigns</span></div><div class="proof"><strong>Multi-market</strong><span>US, Canada, Europe, Gulf, Egypt</span></div><div class="proof"><strong>Ops</strong><span>CRM + workflow ownership</span></div></div><button class="btn" data-open-case="mulingua">View case study</button></div>
+      </article>
+
+      <article class="case reveal">
+        <div class="case-visual"><div class="case-type">Academic transformation case · In progress</div><h3>Digital Customer Experience Transformation in Retail Banking</h3><div class="mini-chart"><span style="height:45%"></span><span style="height:72%"></span><span style="height:58%"></span><span style="height:91%"></span><span style="height:66%"></span></div></div>
+        <div class="case-body"><div class="case-meta"><span>Entrepreneurial IT · AUC</span><span>Fictional bank case</span></div><p class="case-summary">A structured business-analysis case covering digital onboarding, customer service, root causes, KPIs, process gaps, and technology transformation direction.</p><div class="case-proof"><div class="proof"><strong>2</strong><span>Customer journeys</span></div><div class="proof"><strong>17</strong><span>KPI targets framed</span></div><div class="proof"><strong>13</strong><span>Prioritized requirements</span></div><div class="proof"><strong>Stage 1</strong><span>Analysis completed</span></div></div><button class="btn" data-open-case="bank">View case study</button></div>
+      </article>
+
+      <article class="case reveal">
+        <div class="case-visual"><div class="case-type">Tourism technology research · 2026</div><h3>Trust, Pricing &amp; Comparison in Tourism Booking</h3><div class="mini-chart"><span style="height:89%"></span><span style="height:78%"></span><span style="height:66%"></span><span style="height:74%"></span><span style="height:55%"></span></div></div>
+        <div class="case-body"><div class="case-meta"><span>Independent / academic research</span><span>Egypt</span></div><p class="case-summary">Researched how technology could reduce friction in tourism discovery and booking, focusing on trust, transparent pricing, comparison, reviews, and reliable trip information.</p><div class="case-proof"><div class="proof"><strong>Trust</strong><span>Agency credibility</span></div><div class="proof"><strong>Price</strong><span>Transparent comparison</span></div><div class="proof"><strong>Reviews</strong><span>Decision confidence</span></div><div class="proof"><strong>UX</strong><span>Easy booking flow</span></div></div><button class="btn" data-open-case="tourism">View case study</button></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section alt">
+  <div class="container">
+    <div class="section-head reveal"><div class="section-label">03 · About</div><div><h2 class="section-title">Business thinking with an operator’s mindset.</h2></div></div>
+    <div class="about-grid">
+      <div class="about-copy reveal"><p>I study <strong>Business Administration with a concentration in Management of Information &amp; Communication Technology at The American University in Cairo</strong>. My work sits between business research, operations, technology, and growth.</p><p>I’m most effective when the question is not simply “find information,” but <strong>“what does this information mean for the decision we need to make?”</strong></p><p>That has meant field-based competitor research, global B2B outreach, CRM and workflow improvement, strategic case analysis, and presenting findings to decision-makers.</p></div>
+      <div class="timeline reveal">
+        <div class="role"><div class="date">Jul 2026 — Oct 2026</div><h3>Operations Intern · edge Innovation Center</h3><p>Market intelligence, operations, customer experience, and strategic research at Raya Smart Buildings.</p></div>
+        <div class="role"><div class="date">Jun 2025 — Jul 2026</div><h3>Business Development &amp; Operations Manager · Mulingua</h3><p>B2B acquisition, sales operations, CRM management, strategic outreach, and workflow improvement.</p></div>
+        <div class="role"><div class="date">Jun 2026 — Present</div><h3>Vice President · Enactus AUC</h3><p>Cross-functional leadership, internal coordination, reporting, stakeholder communication, and strategic execution.</p></div>
+        <div class="role"><div class="date">Expected Jun 2028</div><h3>BBA · The American University in Cairo</h3><p>Management of Information &amp; Communication Technology (MICT).</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tools" class="section">
+  <div class="container">
+    <div class="section-head reveal"><div class="section-label">04 · Toolkit</div><div><h2 class="section-title">Tools are useful. Outcomes matter more.</h2><p class="section-desc">I use the stack that fits the problem—from prospecting and CRM tools to spreadsheets, workflow automation, structured research, and presentation building.</p></div></div>
+    <div class="tool-grid">
+      <div class="tool-card reveal"><h3>Research &amp; Analysis</h3><p>Excel, Google Workspace, market research frameworks, competitor benchmarking, pricing analysis.</p></div>
+      <div class="tool-card reveal"><h3>Growth &amp; CRM</h3><p>Apollo.io, SmartLead, LinkedIn prospecting, CRM pipeline management, cold email and call follow-up.</p></div>
+      <div class="tool-card reveal"><h3>Automation &amp; Ops</h3><p>Make, Trello, workflow mapping, handoff design, SOPs, AI-assisted process improvement.</p></div>
+      <div class="tool-card reveal"><h3>Technical &amp; Data</h3><p>SQL (MySQL), Microsoft Access, HTML/CSS, AI tools, structured data organization.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="contact-box reveal">
+      <div><div class="kicker" style="color:#8fd5ca">Start a project</div><h2>Have a project in mind?</h2><p>I’m available for freelance projects involving market research, competitor analysis, B2B lead generation, business research, and strategy. Tell me what you’re trying to solve, and we can start from there.</p></div>
+      <div class="contact-links"><button class="btn primary" id="startProjectBtn" type="button">Start a Project</button><a class="btn" href="https://www.linkedin.com/in/ahmed-tai-818b09329/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BMvBsZRRXS5aRuMz%2F4CbC1g%3D%3D" target="_blank" rel="noopener">Connect on LinkedIn</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="container footer-inner"><span>© <span id="year"></span> Ahmed Taia</span><span>Market Research &amp; Business Development</span></div></footer>
+
+<div class="modal" id="caseModal" aria-hidden="true">
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-top"><div class="modal-title" id="modalTitle">Case Study</div><button class="close" aria-label="Close case study">×</button></div>
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+</div>
+
+
+<div class="modal" id="projectModal" aria-hidden="true">
+  <div class="modal-card project-modal-card" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
+    <div class="modal-top"><div class="modal-title" id="projectModalTitle">Start a Project</div><button class="close project-close" aria-label="Close project contact">×</button></div>
+    <div class="modal-content">
+      <p class="project-intro">Tell me briefly what you need, your timeline, and the type of support you are looking for. You can copy the template below and send it from any email provider.</p>
+      <div class="project-contact-grid">
+        <div class="project-contact-item"><div class="eyebrow-small">Email</div><div class="project-email" id="projectEmail">ahmedtaiabusiness@gmail.com</div></div>
+        <div class="project-contact-item"><div class="eyebrow-small">Typical projects</div><div>Market research · Competitor analysis · B2B lead generation · Business research</div></div>
+      </div>
+      <textarea class="project-message" id="projectMessage" aria-label="Project inquiry template">Hi Ahmed,
+
+I came across your portfolio and would like to discuss a potential project.
+
+Project type: [Market research / Competitor analysis / B2B lead generation / Business research]
+What I need: 
+Timeline: 
+Budget range (optional): 
+
+Best,
+[Your name]</textarea>
+      <div class="project-actions">
+        <button class="btn primary" id="copyEmailBtn" type="button">Copy Email</button>
+        <button class="btn" id="copyMessageBtn" type="button">Copy Message</button>
+        <a class="btn" href="https://www.linkedin.com/in/ahmed-tai-818b09329/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BMvBsZRRXS5aRuMz%2F4CbC1g%3D%3D" target="_blank" rel="noopener">Message on LinkedIn</a>
+      </div>
+      <div class="copy-status" id="copyStatus" aria-live="polite"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const cases={
+edge:{title:"Flexible Workspace Market Intelligence & Expansion Strategy",meta:"Real-world internship · Raya Smart Buildings / edge Innovation Center · 2026",intro:"Management needed evidence to decide whether the business should expand immediately or first validate new workspace concepts. I helped turn field observations into a structured market-intelligence view and a decision framework.",facts:[["7","competitor branch visits personally conducted"],["18","total field visits across the team"],["10+","brands / branches assessed"],["Board","final management presentation"]],challenge:"The core question was strategic: expand now, or wait and validate a lighter concept first. The research needed to go beyond price collection and compare how competitors actually win—through product design, infrastructure, community, customer experience, and commercial models.",approach:["Conducted 7 field visits personally as part of an 18-visit team research effort.","Benchmarked competitors across multiple dimensions including location, pre-visit experience, arrival, team, infrastructure, amenities, community, design, and technology.","Centralized and structured field data with Gen-AI-assisted analysis to make cross-competitor comparison faster.","Built the competitive analysis report, positioning logic, market-gap view, and strategic recommendations.","Presented the final work to Raya Smart Buildings' management board."],outcome:"The CEO responded positively to the presentation and research. The decision was to avoid rushing into expansion, test a smaller-office / lighter concept first, review the new results, and then return to the expansion decision with stronger evidence.",skills:["Market research","Competitive intelligence","Field research","Pricing & positioning","Data synthesis","Executive presentation"],note:"Selected internal pricing, operational figures, competitor-detail observations, and other confidential material have been intentionally omitted from this public portfolio."},
+mulingua:{title:"Global Client Acquisition & Sales Operations",meta:"Mulingua Language Services · 2025–2026",intro:"I worked across business development and operations, combining targeted prospect research, outbound campaigns, CRM management, client onboarding, and process improvement.",facts:[["30+","clients onboarded across multiple regions"],["40+","cold-email campaigns managed"],["Global","USA, Canada, Europe, Gulf, and Egypt"],["Multi-channel","email, calls, LinkedIn, CRM follow-up"]],challenge:"The business needed a repeatable way to identify the right companies, reach relevant decision-makers, qualify opportunities, and coordinate internal delivery requirements once a prospect became active.",approach:["Defined target-company profiles through discussions with leadership about available language resources, recruiter capacity, and industry demand.","Used Apollo, SmartLead, LinkedIn, email, calls, and CRM tools to identify and engage relevant prospects.","Captured company context, decision-maker information, contact channels, and likely localization needs before outreach.","Managed follow-ups and pipeline activity across cold email and phone-based outreach.","Improved the BD-to-recruiting/admin handoff with a Trello → Make → email notification workflow and supporting SOP."],outcome:"Over the year, the work contributed to onboarding 30+ clients across international markets while also improving how new opportunities moved from sales into internal execution.",skills:["B2B lead generation","ICP definition","Cold outreach","CRM management","Client onboarding","Workflow automation"]},
+bank:{title:"Digital Customer Experience Transformation in Retail Banking",meta:"Academic case study · Entrepreneurial IT at AUC · 2026 · In progress",intro:"This is a fictional-bank transformation case, not client work. The project applies business analysis and technology strategy to two retail-banking journeys: digital onboarding & activation, and customer service / complaints.",facts:[["2","priority customer journeys"],["17","numeric KPI targets framed"],["13","prioritized business / technology requirements"],["Stage 1","business analysis & current state"]],challenge:"The fictional bank has capable core platforms but fragmented customer identity, inconsistent cross-channel status, inherited processes, and limited modern integration / applied-AI maturity. The challenge is to modernize the experience without replacing the full core technology stack.",approach:["Framed the North Star and business outcomes around digital adoption, cost-to-serve, activation speed, cross-channel continuity, and service resolution.","Separated confirmed facts from planning assumptions so the analysis remained explicit about evidence quality.","Built root-cause analysis, personas, gap registers, prioritized requirements, and KPI targets.","Mapped current-state onboarding and service journeys, then compared them with desired-state capabilities.","Used financial-services technology references to assess digital identity/eKYC, API and event integration, Customer 360, AI-assisted service, cloud resilience, and data governance."],outcome:"Stage 1 establishes a structured problem definition and measurable transformation direction. Later stages will build on these foundations rather than jumping directly to a technology solution.",skills:["Business analysis","Digital transformation","KPI design","Root-cause analysis","Process mapping","Technology strategy"],note:"The bank and case entities are fictional and the project is still in progress. Portfolio content reflects the completed analysis stage only."},
+tourism:{title:"Trust, Pricing & Comparison in Tourism Booking",meta:"Tourism technology research · Egypt · 2026",intro:"I researched how digital tools could reduce friction in tourism discovery and booking, with particular attention to trust, transparent pricing, reliable reviews, agency credibility, and comparison.",facts:[["Trust","verified providers and reputation"],["Price","clear comparison and hidden-cost visibility"],["Reviews","stronger confidence before booking"],["UX","simpler trip discovery and booking"]],challenge:"Tourists can struggle to compare offers across agencies, understand what is included, judge whether reviews are trustworthy, and avoid price inconsistency or hidden costs. The research focused on the information people need before they feel confident enough to book.",approach:["Collected customer pain points through interviews and survey responses.","Identified repeated decision factors including price, reviews, safety, agency reputation, photos, trip details, and booking convenience.","Compared existing tourism platforms and agency-led booking models to identify information and trust gaps.","Translated the findings into product requirements around verified providers, transparent trip details, comparison, reviews, and easier booking."],outcome:"The research produced a clearer picture of what a tourism-technology experience would need to solve before product development: trust first, transparent comparison second, and a low-friction booking experience built on reliable trip information.",skills:["Customer research","Market research","Competitor analysis","Product discovery","User needs","Business model thinking"]}
+};
+
+const modal=document.getElementById('caseModal');
+const content=document.getElementById('modalContent');
+const titleEl=document.getElementById('modalTitle');
+function openCase(key){const c=cases[key];if(!c)return;titleEl.textContent=c.title;content.innerHTML=`
+<div class="case-study-head"><div><div class="kicker">${c.meta}</div><h2>${c.title}</h2><p>${c.intro}</p></div><div class="fact-list">${c.facts.map(f=>`<div class="fact"><strong>${f[0]}</strong><span>${f[1]}</span></div>`).join('')}</div></div>
+<div class="story-grid"><div class="story"><h3>Challenge</h3><p>${c.challenge}</p></div><div class="story"><h3>Approach</h3><ul>${c.approach.map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="story"><h3>Outcome / Direction</h3><p>${c.outcome}</p></div><div class="story"><h3>Capabilities Demonstrated</h3><div class="tags">${c.skills.map(x=>`<span class="tag">${x}</span>`).join('')}</div></div></div>${c.note?`<div class="confidential">${c.note}</div>`:''}`;modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+document.querySelectorAll('[data-open-case]').forEach(b=>b.addEventListener('click',()=>openCase(b.dataset.openCase)));
+document.querySelector('#caseModal .close').addEventListener('click',closeModal);
+modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeProjectModal();}});
+
+const projectModal=document.getElementById('projectModal');
+const startProjectBtn=document.getElementById('startProjectBtn');
+const projectClose=document.querySelector('.project-close');
+const copyStatus=document.getElementById('copyStatus');
+function openProjectModal(){projectModal.classList.add('open');projectModal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';copyStatus.textContent=''}
+function closeProjectModal(){projectModal.classList.remove('open');projectModal.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+startProjectBtn.addEventListener('click',openProjectModal);
+projectClose.addEventListener('click',closeProjectModal);
+projectModal.addEventListener('click',e=>{if(e.target===projectModal)closeProjectModal()});
+function fallbackCopy(text){const ta=document.createElement('textarea');ta.value=text;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();let ok=false;try{ok=document.execCommand('copy')}catch(e){}document.body.removeChild(ta);return ok}
+async function copyText(text,label){let ok=false;try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);ok=true}else{ok=fallbackCopy(text)}}catch(e){ok=fallbackCopy(text)}copyStatus.textContent=ok?`${label} copied — paste it into your email app.`:`Could not copy automatically. Select the text above and copy it manually.`}
+document.getElementById('copyEmailBtn').addEventListener('click',()=>copyText(document.getElementById('projectEmail').textContent.trim(),'Email address'));
+document.getElementById('copyMessageBtn').addEventListener('click',()=>copyText(document.getElementById('projectMessage').value,'Project message'));
+
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
